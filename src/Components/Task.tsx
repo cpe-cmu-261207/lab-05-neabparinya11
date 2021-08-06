@@ -8,8 +8,9 @@ function TaskCard(props:any){
     return (
         <div
             className="flex justify-between h-8 items-center py-6 border-b"
+            onMouseOver={(ev)=>{setCheck(ev.bubbles);console.log(ev.bubbles)}} onMouseLeave={()=>{setCheck(false);}}
           >
-            <span className="text-2xl "style={{ textDecoration: value.isDone ? "line-through" : "" }}  onMouseOver={(ev)=>{setCheck(ev.bubbles);console.log(ev.bubbles)}} onMouseLeave={()=>{setCheck(false);}}> {value.text} </span>
+            <span className="text-2xl "style={{ textDecoration: value.isDone ? "line-through" : "" }} > {value.text} </span>
             <div className="flex space-x-1 items-center ">
               <button className="bg-green-400 w-24 text-2xl "
                 style={{visibility: Check ?"visible":"hidden"}} 
